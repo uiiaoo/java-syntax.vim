@@ -1,2 +1,11 @@
 # java-syntax.vim
-[WIP] a vim plugin that provides syntax highlighting for Java.
+This is a Vim plugin that provides syntax highlighting for Java.
+This syntax highlighting is better than the standard installation.
+
+## Installation
+### Using dein.vim
+```viml
+call dein#add('uiiaoo/java-syntax.vim')
+```
+
+If you use another plugin manager, follow its way.
