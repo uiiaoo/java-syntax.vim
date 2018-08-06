@@ -21,6 +21,7 @@ sy keyword javaType             char
 sy keyword javaType             byte short int long
 sy keyword javaType             boolean
 sy keyword javaType             float double
+sy keyword javaType             var
 sy keyword javaStorageClass     static transient final abstract
 sy keyword javaStorageClass     volatile strictfp native
 sy keyword javaStorageClass     synchronized
