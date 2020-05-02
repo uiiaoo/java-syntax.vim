@@ -8,20 +8,20 @@ sy keyword javaStatement        break continue
 sy keyword javaConditional      if else
 sy keyword javaRepeat           for while do
 sy keyword javaLabel            case default
-sy keyword javaOperator         new                 skipwhite skipempty nextgroup=javaType
-sy keyword javaOperator         instanceof          skipwhite skipempty nextgroup=javaType
+sy keyword javaOperatorSystem   new                 skipwhite skipempty nextgroup=javaType
+sy keyword javaOperatorSystem   instanceof          skipwhite skipempty nextgroup=javaType
 sy keyword javaAccessKeyword    public protected private
 sy keyword javaException        throw
 sy keyword javaException        try catch finally
 "-----------------------------------------------------------------------------------------
-sy keyword javaPreProc          package
+sy keyword javaPackage          package
 "-----------------------------------------------------------------------------------------
-sy keyword javaType             void
-sy keyword javaType             char
-sy keyword javaType             byte short int long
-sy keyword javaType             boolean
-sy keyword javaType             float double
-sy keyword javaType             var
+sy keyword javaTypeSystem       void
+sy keyword javaTypeSystem       char
+sy keyword javaTypeSystem       byte short int long
+sy keyword javaTypeSystem       boolean
+sy keyword javaTypeSystem       float double
+sy keyword javaTypeSystem       var
 sy keyword javaStorageClass     static transient final abstract
 sy keyword javaStorageClass     volatile strictfp native
 sy keyword javaStorageClass     synchronized
@@ -34,7 +34,9 @@ sy keyword javaDebug            assert
 "-----------------------------------------------------------------------------------------
 sy keyword javaError            goto const
 "-----------------------------------------------------------------------------------------
-sy keyword javaTodoTask         TODO FIXME  contained
-sy keyword javaTodoNote         NOTE        contained
-sy keyword javaTodoWarn         XXX NB      contained
+sy keyword javaTodoTask         TODO FIXME FIX contained
+sy keyword javaTodoNote         NOTE           contained
+sy keyword javaTodoWarn         XXX NB         contained
+"-----------------------------------------------------------------------------------------
+sy keyword javaSpecialTags      Override Deprecated contained containedin=javaPreProc
 "-----------------------------------------------------------------------------------------

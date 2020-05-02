@@ -10,21 +10,28 @@ hi def link javaFloat           Float
 "-------------------------------------------------
 hi def link javaIdentifier      Identifier
 hi def link javaFunction        Function
+hi def link javaFunctionCall    Function
 "-------------------------------------------------
 hi def link javaStatement       Statement
 hi def link javaConditional     Conditional
 hi def link javaRepeat          Repeat
 hi def link javaLabel           Label
 hi def link javaOperator        Operator
+hi def link javaOperatorSpecial Operator
+hi def link javaOperatorSystem  Operator
 hi def link javaKeyword         Keyword
 hi def link javaException       Exception
 "-------------------------------------------------
+hi def link javaPackage         PreProc
+hi def link javaSpecialTags     PreProc
 hi def link javaPreProc         PreProc
 hi def link javaInclude         Include
 hi def link javaDefine          Define
 hi def link javaMacro           Macro
 hi def link javaPreCondit       PreCondit
 "-------------------------------------------------
+hi def link javaTypeIn          Type
+hi def link javaTypeSystem      Type
 hi def link javaType            Type
 hi def link javaStorageClass    StorageClass
 hi def link javaStructure       Structure

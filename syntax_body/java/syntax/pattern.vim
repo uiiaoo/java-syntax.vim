@@ -1,6 +1,8 @@
 "---------------------------------------------------------------------------------------------------
 sy match  javaOperator      '[()\.\[\]+\-\~!\*/%<>=&\^|?:]'
+sy match  javaOperatorSpecial '[,;]'
 sy match  javaIdentifier    '\v<%(\h|\$)%(\w|\$)*>'
+sy match  javaFunctionCall  '\v\.<%(\h|\$)%(\w|\$)*>\ze\_s*\(\_.{-}\)'
 sy match  javaFunction      '\v<%(\h|\$)%(\w|\$)*>\ze\_s*\(\_.{-}\)'
 sy match  javaType          '\v<\$*\u%(\w|\$)*>'
 sy match  javaConstant      '\v<%(\u|[_\$])%(\u|\d|[_\$])*>'
@@ -25,6 +27,9 @@ sy match  javaHexFloat      '\v\c<0X\x%(\x|_*\x)*%(P[+-]=\d%(\d|_*\d)*[FD]=|[FD]
 sy match  javaHexFloat      '\v\c<0X\x%(\x|_*\x)*\.%(\x%(\x|_*\x)*)=%(P[+-]=\d%(\d|_*\d)*)=[FD]='
 sy match  javaHexFloat      '\v\c<0X\.\x%(\x|_*\x)*%(P[+-]=\d%(\d|_*\d)*)=[FD]='
 "---------------------------------------------------------------------------------------------------
+" sy match  javaTypeIn        '\v<\$*\u%(\w|\$)*>' containedin=@javaTypedef contained
+sy match  javaTypeIn        '\v<\$*\u%(\w|\$)*>' containedin=javaTypedef contained
+sy region javaTypedef       start='<' end='>' containedin=javaTypedef  contains=javaOperatorSpecial matchgroup=javaOperator oneline
 sy match  javaPreProc       '@\h\w*'
 sy match  javaInclude       '\v<import%(\_s+static)=>'
 \   skipwhite skipempty nextgroup=javaPackagePath
