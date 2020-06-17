@@ -5,7 +5,7 @@ sy keyword javaBoolean          true false
 "-----------------------------------------------------------------------------------------
 sy keyword javaStatement        return
 sy keyword javaStatement        break continue
-sy keyword javaConditional      if else
+sy keyword javaConditional      if else switch
 sy keyword javaRepeat           for while do
 sy keyword javaLabel            case default
 sy keyword javaOperator         new                 skipwhite skipempty nextgroup=javaType
