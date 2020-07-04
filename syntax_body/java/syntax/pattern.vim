@@ -31,3 +31,21 @@ sy match  javaInclude       '\v<import%(\_s+static)=>'
 sy match  javaPackagePath   '\v<%(%(\w|\$)+\_s*\.\_s*)*%(\w|\$)+>'
 \   contained contains=javaIdentifier,javaOperator
 "---------------------------------------------------------------------------------------------------
+" syntax coloring for javadoc comments (HTML)
+syntax include @javaHtml <sfile>:p:h/html.vim
+" HTML enables spell checking for all text that is not in a syntax item. This
+" is wrong for Java (all identifiers would be spell-checked), so it's undone
+" here.
+syntax spell default
+
+sy region  javaDocComment  start="/\*\*"  end="\*/" contains=javaCommentTitle,@javaHtml,javaDocTags,javaDocSeeTag,javaTodo,@Spell,@javaTodos
+sy region  javaCommentTitle    contained matchgroup=javaDocComment start="/\*\*"   matchgroup=javaCommentTitle keepend end="\.$" end="\.[ \t\r<&]"me=e-1 end="[^{]@"me=s-2,he=s-1 end="\*/"me=s-1,he=s-1 contains=@javaHtml,javaCommentStar,javaTodo,@Spell,javaDocTags,javaDocSeeTag,@javaTodos
+
+sy region javaDocTags   contained start="{@\(code\|link\|linkplain\|inherit[Dd]oc\|doc[rR]oot\|value\)" end="}"
+sy match  javaDocTags   contained "@\(param\|exception\|throws\|since\)\s\+\S\+" contains=javaDocParam
+sy match  javaDocParam  contained "\s\S\+"
+sy match  javaDocTags   contained "@\(version\|author\|return\|deprecated\|serial\|serialField\|serialData\)\>"
+sy region javaDocSeeTag     contained matchgroup=javaDocTags start="@see\s\+" matchgroup=NONE end="\_."re=e-1 contains=javaDocSeeTagParam
+sy match  javaDocSeeTagParam  contained @"\_[^"]\+"\|<a\s\+\_.\{-}</a>\|\(\k\|\.\)*\(#\k\+\((\_[^)]\+)\)\=\)\=@ extend
+syntax case match
+
