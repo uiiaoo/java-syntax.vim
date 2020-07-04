@@ -8,6 +8,13 @@ elseif exists("b:current_syntax")
     finish
 endif
 
+if !exists("main_syntax")
+  if exists("b:current_syntax")
+    finish
+  endif
+  let main_syntax='java'
+endif
+
 runtime! syntax_body/java/syntax/*.vim
 runtime! syntax_body/java/hilink/*.vim
 
