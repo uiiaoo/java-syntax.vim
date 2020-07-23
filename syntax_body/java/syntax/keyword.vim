@@ -5,6 +5,7 @@ sy keyword javaBoolean          true false
 "-----------------------------------------------------------------------------------------
 sy keyword javaStatement        return
 sy keyword javaStatement        break continue
+sy keyword javaStatement        yield
 sy keyword javaConditional      if else switch
 sy keyword javaRepeat           for while do
 sy keyword javaLabel            case default
