@@ -30,6 +30,7 @@ sy keyword javaStructure        class interface     skipwhite skipempty nextgrou
 sy keyword javaStructure        enum                skipwhite skipempty nextgroup=javaType
 sy keyword javaStructure        extends implements  skipwhite skipempty nextgroup=javaType
 sy keyword javaStructure        throws              skipwhite skipempty nextgroup=javaType
+sy keyword javaStructure        record              skipwhite skipempty nextgroup=javaType
 "-----------------------------------------------------------------------------------------
 sy keyword javaDebug            assert
 "-----------------------------------------------------------------------------------------
