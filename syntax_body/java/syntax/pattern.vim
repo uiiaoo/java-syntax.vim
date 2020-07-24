@@ -9,6 +9,7 @@ sy match  javaComment       '//.*'                  contains=@javaTodos
 sy region javaComment       start='/\*' end='\*/'   contains=@javaTodos
 "---------------------------------------------------------------------------------------------------
 sy match  javaString        '\v"%([^\\"]|\\.)*"'
+sy region javaString        start='"""\s*$' end='"""'
 sy match  javaCharacter     "'[^\\']'"
 sy match  javaCharacter     "'\\[btnfr\"'\\]'"
 sy match  javaCharacter     "\v'\\%(\o{1,3}|u\x{4})'"
