@@ -31,7 +31,7 @@ sy match  javaInclude       '\v<import%(\_s+static)=>'
 sy match  javaPackagePath   '\v<%(%(\w|\$)+\_s*\.\_s*)*%(\w|\$)+>'
 \   contained contains=javaIdentifier,javaOperator
 "---------------------------------------------------------------------------------------------------
-if !exists("java_ignore_javadoc") && main_syntax != 'jsp'
+if !exists("java_ignore_javadoc")
   " syntax coloring for javadoc comments (HTML)
   syntax include @javaHtml syntax/html.vim
   unlet b:current_syntax
