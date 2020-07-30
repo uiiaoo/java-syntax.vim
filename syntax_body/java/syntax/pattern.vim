@@ -33,7 +33,7 @@ sy match  javaPackagePath   '\v<%(%(\w|\$)+\_s*\.\_s*)*%(\w|\$)+>'
 "---------------------------------------------------------------------------------------------------
 if !exists("java_ignore_javadoc") && main_syntax != 'jsp'
   " syntax coloring for javadoc comments (HTML)
-  syntax include @javaHtml <sfile>:p:h/html.vim
+  syntax include @javaHtml syntax/html.vim
   unlet b:current_syntax
   " HTML enables spell checking for all text that is not in a syntax item. This
   " is wrong for Java (all identifiers would be spell-checked), so it's undone
@@ -50,4 +50,3 @@ if !exists("java_ignore_javadoc") && main_syntax != 'jsp'
   sy match  javaDocSeeTagParam contained @"\_[^"]\+"\|<a\s\+\_.\{-}</a>\|\(\k\|\.\)*\(#\k\+\((\_[^)]\+)\)\=\)\=@ extend
   syntax case match
 endif
-
