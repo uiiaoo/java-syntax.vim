@@ -16,6 +16,7 @@ hi def link javaConditional     Conditional
 hi def link javaRepeat          Repeat
 hi def link javaLabel           Label
 hi def link javaOperator        Operator
+hi def link javaDelimiter       Delimiter
 hi def link javaKeyword         Keyword
 hi def link javaException       Exception
 "-------------------------------------------------

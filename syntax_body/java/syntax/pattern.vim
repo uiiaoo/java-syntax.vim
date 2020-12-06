@@ -1,5 +1,6 @@
 "---------------------------------------------------------------------------------------------------
-sy match  javaOperator      '[()\.\[\]+\-\~!\*/%<>=&\^|?:,]'
+sy match  javaOperator      '\(\~\|!\|\*\|/\|%\| [<>]\|[<>] \|=\|&\|\^\||\|?\|:\)'
+sy match  javaDelimiter     '\((\|)\|\.\|\[\|\]\|+\-\|,\|[<>]\|;\)' contains=javaOperator
 sy match  javaIdentifier    '\v<%(\h|\$)%(\w|\$)*>'
 sy match  javaFunction      '\v<%(\h|\$)%(\w|\$)*>\ze\_s*\(\_.{-}\)'
 sy match  javaType          '\v<\$*\u%(\w|\$)*>'
@@ -30,5 +31,5 @@ sy match  javaPreProc       '@\h\w*'
 sy match  javaInclude       '\v<import%(\_s+static)=>'
 \   skipwhite skipempty nextgroup=javaPackagePath
 sy match  javaPackagePath   '\v<%(%(\w|\$)+\_s*\.\_s*)*%(\w|\$)+>'
-\   contained contains=javaIdentifier,javaOperator
+\   contained contains=javaDelimiter,javaIdentifier,javaOperator
 "---------------------------------------------------------------------------------------------------
