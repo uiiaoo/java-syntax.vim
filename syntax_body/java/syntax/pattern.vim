@@ -1,6 +1,6 @@
 "---------------------------------------------------------------------------------------------------
 sy match  javaOperator      '\(\~\|!\|\*\|/\|%\| [<>]\|=\|&\|\^\||\|?\|:\)'
-sy match  javaDelimiter     '\((\|)\|\.\|\[\|\]\|+\-\|,\|[<>]\|;\)' contains=javaOperator
+sy match  javaDelimiter     '\((\|)\|\.\|\[\|\]\|{\|}\|+\-\|,\|[<>]\|;\)' contains=javaOperator
 sy match  javaIdentifier    '\v<%(\h|\$)%(\w|\$)*>'
 sy match  javaFunction      '\v<%(\h|\$)%(\w|\$)*>\ze\_s*\(\_.{-}\)'
 sy match  javaType          '\v<\$*\u%(\w|\$)*>'
