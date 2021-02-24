@@ -40,6 +40,8 @@ if !exists("java_ignore_javadoc")
   " here.
   syntax spell default
 
+  sy match  javaCommentStar   contained "^\s*\*[^/]"me=e-1
+  sy match  javaCommentStar   contained "^\s*\*$"
   sy region javaDocComment    start="/\*\*"  end="\*/" contains=javaCommentTitle,@javaHtml,javaDocTags,javaDocSeeTag,@Spell,@javaTodos
   sy region javaCommentTitle  contained matchgroup=javaDocComment start="/\*\*"   matchgroup=javaCommentTitle keepend end="\.$" end="\.[ \t\r<&]"me=e-1 end="[^{]@"me=s-2,he=s-1 end="\*/"me=s-1,he=s-1 contains=@javaHtml,javaCommentStar,@Spell,javaDocTags,javaDocSeeTag,@javaTodos
   sy region javaDocTags       contained start="{@\(code\|link\|linkplain\|inherit[Dd]oc\|doc[rR]oot\|value\)" end="}"
