@@ -31,5 +31,5 @@ sy match  javaPreProc       '@\h\w*'
 sy match  javaInclude       '\v<import%(\_s+static)=>'
 \   skipwhite skipempty nextgroup=javaPackagePath
 sy match  javaPackagePath   '\v<%(%(\w|\$)+\_s*\.\_s*)*%(\w|\$)+>'
-\   contained contains=javaDelimiter,javaIdentifier,javaOperator
+\   contained contains=javaIdentifier,javaDelimiter
 "---------------------------------------------------------------------------------------------------
